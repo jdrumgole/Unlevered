@@ -9,6 +9,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
+import {Divider} from "@nextui-org/divider";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
@@ -40,23 +41,26 @@ export const Navbar2 = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="2xl" position="sticky">
+    <NextUINavbar isBordered maxWidth="2xl" position="sticky" >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
+        <ul className="hidden lg:flex gap-14 justify-start ml-2">
+          <NavbarItem>
+          <Link color="foreground">
+            Portfolio
+          </Link>
+          </NavbarItem>
+          <NavbarItem isActive>
+          <Link color="primary" href="/market">
+            Market
+          </Link>
+          </NavbarItem>
+          <NavbarItem>
+          <Link color="foreground" >
+            News
+          </Link>
+        </NavbarItem>
+          
+          
         </ul>
       </NavbarContent>
       <NavbarContent

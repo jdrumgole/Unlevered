@@ -1,29 +1,26 @@
+/* eslint-disable prettier/prettier */
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Next.js + NextUI",
   description: "Mke beautiful websites regardless of your design experience.",
-  navItems: [
+  menuItems: [
     {
-      label: "Home",
+      label: "Portfolio",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Market",
+      href: "/market",
     },
-    {
-      label: "Pricing",
-      href: "/pricing",
+     {
+      label: "News",
+      href: "/news",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
+    
+  ],
+  navItems: [
+ 
   ],
   navMenuItems: [
     {
