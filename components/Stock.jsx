@@ -36,26 +36,94 @@ const Stock = () => {
 
   return (
     <div className="flex flex-col w-[30%] h-full pr-10 border-primary border-large rounded-md bg-slate-500 bg-opacity-0">
-      <div className="flex w full items-center"></div>
-      <div className="flex w-full mt-6">
+      <div className="flex w-full mx-3  mr-6 mt-6">
         <div className="flex flex-col w-full">
-          <div className="">
-            <span>Stock:</span>
-            <h2>Key Ratios</h2>
-          </div>
+            <span className="text-sm capitalize text-gray-500">Stock/Price:</span> 
+            <div className="text-sm  font-medium flex items-center rounded uppercase bg-opacity-25">
+              <span className="text-3xl">{ticker}</span>
+            </div>
         </div>
-        <div><span>{ticker}</span></div>
+        <div><span className="pr-0 font-large text-5xl ">194.64</span></div>
       </div>
 
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-6">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">Market Cap:</span> 
+        </div>
+        <div><span>{marketCap}</span></div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">Shares Outstanding:</span> 
+        </div>
+        <div><span>{sharesOutstanding}</span></div>
+      </div>
+
+      <div className="flex w-full mx-3  mr-6 mt-6">
+        <div className="flex flex-col w-full">
+            <span className="text-lg capitalize">Key Ratios:</span> 
+        </div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">Current Ratio:</span> 
+        </div>
+        <div><span>{currentRatio}</span></div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">Debt To Equity Ratio:</span> 
+        </div>
+        <div><span>{debtToEquityRatio}</span></div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">P/E Ratio:</span> 
+        </div>
+        <div><span>{peRatio}</span></div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">P/S Ratio:</span> 
+        </div>
+        <div><span>{psRatio}</span></div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">P/B Ratio:</span> 
+        </div>
+        <div><span>{pbRatio}</span></div>
+      </div>
+
+      <div className="flex w full items-center"></div>
+      <div className="flex w-full mx-2 mt-1">
+        <div className="flex flex-col w-full">
+            <span className="text-sm capitalize text-gray-500">PEG Ratio:</span> 
+        </div>
+        <div><span>{pegRatio}</span></div>
+      </div>
+
+  
+      
+       
+     
+
+
       <ul>
-        <li>Market Cap: {marketCap}T</li>
-        <li>Shares Outstanding: {sharesOutstanding}M</li>
-        <li>P/E Ratio: {peRatio}</li>
-        <li>P/S Ratio: {psRatio}</li>
-        <li>P/B Ratio: {pbRatio}</li>
-        <li>PEG Ratio: {pegRatio}</li>
-        <li>Current Ratio: {currentRatio}</li>
-        <li>Debt to Equity Ratio: {debtToEquityRatio}</li>
+        
         <li>EPS: {eps}</li>
       </ul>
       <h2>Analyst Estimates</h2>

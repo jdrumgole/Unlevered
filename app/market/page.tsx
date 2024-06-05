@@ -5,12 +5,15 @@ import Applelogo from "../../assets/applelogo.png";
 
 export default function PricingPage() {
   return (
-    <>
-      <h1 className={title()}>Market</h1>
+    <div>
+      <div className="flex flex-col w-[100%] items-center h-full   bg-slate-500 bg-opacity-0" >
+        <span className="text-7xl ">Market</span>
+      </div>
+
       <div className="flex items-center justify-between h-full w-full py-4 rounded-lg bg-slate-100 bg-opacity-0" >
         <Stock />
         <TradingViewWidget />
       </div>
-    </>
+    </div>
   );
 }
