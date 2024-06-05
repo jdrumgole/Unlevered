@@ -49,7 +49,7 @@ export const Navbar2 = () => {
             Portfolio
           </Link>
           </NavbarItem>
-          <NavbarItem isActive>
+          <NavbarItem >
           <Link color="primary" href="/market">
             Market
           </Link>
