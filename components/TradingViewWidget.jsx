@@ -11,6 +11,7 @@ const TradingViewWidget = () => {
       const script = document.createElement('script');
       script.src = 'https://s3.tradingview.com/tv.js';
       script.async = true;
+
       script.onload = () => {
         if (window.TradingView) {
           widgetRef.current = new window.TradingView.widget({
@@ -32,13 +33,7 @@ const TradingViewWidget = () => {
       document.body.appendChild(script);
 
       // Clean up the script on component unmount
-      return () => {
-        document.body.removeChild(script);
-        if (widgetRef.current) {
-          widgetRef.current.remove();
-          widgetRef.current = null;
-        }
-      };
+     
     }
   }, []);
 

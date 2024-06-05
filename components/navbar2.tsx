@@ -40,8 +40,9 @@ export const Navbar2 = () => {
     />
   );
 
+  
   return (
-    <NextUINavbar isBordered maxWidth="2xl" position="sticky" >
+    <NextUINavbar  isBordered maxWidth="2xl" position="sticky" >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <ul className="hidden lg:flex gap-14 justify-start ml-2">
           <NavbarItem>
@@ -50,12 +51,12 @@ export const Navbar2 = () => {
           </Link>
           </NavbarItem>
           <NavbarItem >
-          <Link color="primary" href="/market">
+          <Link color="foreground" href="/market">
             Market
           </Link>
           </NavbarItem>
           <NavbarItem>
-          <Link color="foreground" >
+          <Link color="foreground" href="/news" >
             News
           </Link>
         </NavbarItem>

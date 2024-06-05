@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { data } from "autoprefixer";
+import { Divider } from "@nextui-org/divider";
 
 const Stock = () => {
   const [stockData, setStockData] = useState(null);
@@ -35,12 +36,13 @@ const Stock = () => {
   } = stockData;
 
   return (
-    <div className="flex flex-col w-[30%] h-full mb-10  pr-10 border-purple-500 border-medium rounded-sm bg-slate-500 bg-opacity-0">
+    <div className="flex flex-col   mx-10 my-10  pr-10 border-purple-500 border-medium rounded-sm bg-slate-500 bg-opacity-0">
       <div className="flex w-full mx-3  mr-6 mt-6">
         <div className="flex flex-col w-full">
             <span className="text-sm capitalize text-gray-500">Stock/Price:</span> 
             <div className="text-sm  font-medium flex items-center rounded uppercase bg-opacity-25">
-              <span className="text-3xl">{ticker}</span>
+            <span className="text-3xl">{ticker}</span>
+            
             </div>
         </div>
         <div><span className="pr-0 font-large text-5xl ">194.64</span></div>

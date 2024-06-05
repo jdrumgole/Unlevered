@@ -18,7 +18,7 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import logoo from '../assets/unlevered_logo.jpg';
-
+import React from "react";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
@@ -31,6 +31,22 @@ import {
 } from "@/components/icons";
 
 export const Navbar = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -48,58 +64,71 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar isBordered onMenuOpenChange={setIsMenuOpen} maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image alt="" src={logoo} width="40" height="40" />
-            <p className="font-bold text-3xl text-inherit">Unlevered</p>
+            <p className="font-bold text-xl text-inherit">Unlevered</p>
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
-      
-        </ul>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
-        <NavbarItem className="hidden sm:flex gap-2">
+      <NavbarContent 
+        className="hidden sm:flex items-center mr-20 gap-8" justify="center">
+          <NavbarItem>
+          <Link color="foreground">
+            Portfolio
+          </Link>
+          </NavbarItem>
+          <NavbarItem >
+          <Link color="foreground" >
+            Market
+          </Link>
+          </NavbarItem>
+          <NavbarItem>
+          <Link color="foreground" >
+            News
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+
+        <NavbarContent justify="end">
+        <NavbarItem className="sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            variant="flat"
-          >
-            Login
-          </Button>
-        </NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            variant="flat"
-          >
-            Register
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-        <NavbarMenuToggle />
-      </NavbarContent>
+        
+          <NavbarItem className="hidden md:flex">
+            <Button
+              isExternal
+              as={Link}
+              className="text-sm font-normal text-default-600 bg-default-100"
+              href={siteConfig.links.sponsor}
+              variant="flat"
+            >
+              Login
+            </Button>
+          </NavbarItem>
+          <NavbarItem className="hidden md:flex">
+            <Button
+              isExternal
+              as={Link}
+              className="text-sm font-normal text-default-600 bg-default-100"
+              href={siteConfig.links.sponsor}
+              variant="flat"
+            >
+              Register
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
+
+     
 
       <NavbarMenu>
         {searchInput}
