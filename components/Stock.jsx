@@ -35,7 +35,7 @@ const Stock = () => {
   } = stockData;
 
   return (
-    <div className="flex flex-col w-[30%] h-full mb-10  pr-10 border-primary border-large rounded-md bg-slate-500 bg-opacity-0">
+    <div className="flex flex-col w-[30%] h-full mb-10  pr-10 border-purple-500 border-medium rounded-sm bg-slate-500 bg-opacity-0">
       <div className="flex w-full mx-3  mr-6 mt-6">
         <div className="flex flex-col w-full">
             <span className="text-sm capitalize text-gray-500">Stock/Price:</span> 
