@@ -14,8 +14,7 @@ const TradingViewWidget = () => {
       script.onload = () => {
         if (window.TradingView) {
           widgetRef.current = new window.TradingView.widget({
-            width: '100%',
-            height: 610,
+           
             symbol: 'NASDAQ:AAPL',
             interval: 'D',
             timezone: 'Etc/UTC',
@@ -44,7 +43,7 @@ const TradingViewWidget = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container">
+    <div className="tradingview-widget-container items-center bg-green-300">
       <div id="tradingview_chart"></div>
       <div className="tradingview-widget-copyright">
         <a href="https://www.tradingview.com" >

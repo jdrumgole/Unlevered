@@ -6,14 +6,15 @@ import Stock from '../../components/Stock'
 export default function PricingPage() {
   return (
     <>
-    <div className="flex items-center justify-between h-full w-full p-4">
-      <div className="flex flex-col w-[30%] h-full pr-2 ">
+     <h1 className={title()}>Market</h1>
+    <div className="flex items-center justify-between h-full w-full p-4 rounded-lg bg-slate-100">
+      <div className="flex flex-col w-[30%] h-full pr-2 rounded-md bg-slate-500 bg-opacity-20 ">
         <Stock/>
       </div>
         
-      <div className="flex flex-col w-[70%] h-full pl-3">
+      
          <TradingViewWidget />  
-      </div>
+      
     </div>
     </>
     
