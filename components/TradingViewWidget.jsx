@@ -43,7 +43,7 @@ const TradingViewWidget = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container px-20 py-20 items-center w-[100%] pt-0 bg-green-300 bg-opacity-0" >
+    <div className="tradingview-widget-container px-20 align-top items-center w-[100%]  bg-green-300 bg-opacity-0" >
       <div id="tradingview_chart"></div>
       <div className="tradingview-widget-copyright">
         <a href="https://www.tradingview.com" >
